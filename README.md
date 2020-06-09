@@ -8,7 +8,7 @@
 	Game Track 🚀 🚧 Work in progress... 🚧
 </h4>
 <p align="center">
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/gmarroquio/GameTrack?color=%23FF91AD">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/GMarroquio/GameTrack?color=%23FF91AD">
 	
   <a href="https://www.linkedin.com/in/gmarroquio/">
     <img alt="Made by Guilherme" src="https://img.shields.io/badge/made%20by-Guilherme-%232990B3">
