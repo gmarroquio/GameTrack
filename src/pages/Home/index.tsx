@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { FlatList, TouchableOpacity } from "react-native-gesture-handler";
 import { FontAwesome } from "@expo/vector-icons";
+import Icon from "../../components/Icon";
 
 import api from "../../services/api";
-
-import pc from "../../assets/windows.svg";
-import ps from "../../assets/playstation.svg";
-import xbox from "../../assets/xbox.svg";
 
 import {
   Container,
@@ -81,12 +78,11 @@ const Home: React.FC = () => {
           </WrapperTop>
           <WrapperBottom>
             <Consoles>
-              {/* Fazer o map pegando os consoles */}
-              <Console xml={pc} />
-              <Console xml={ps} />
-              <Console xml={xbox} />
-              {/* {item.parent_platforms.map(({ platform }) => (
-              ))} */}
+              {item.parent_platforms.map(({ platform }) => (
+                <Console key={String(platform.id)}>
+                  <Icon name={platform.slug} size={20} />
+                </Console>
+              ))}
             </Consoles>
             <ReleaseDate>{item.released}</ReleaseDate>
           </WrapperBottom>

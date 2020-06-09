@@ -1,6 +1,5 @@
 import styled from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient";
-import { SvgXml } from "react-native-svg";
 
 export const Container = styled.View`
   background: #333;
@@ -48,10 +47,7 @@ export const Consoles = styled.View`
   flex-direction: row;
 `;
 
-export const Console = styled(SvgXml).attrs({
-  height: 20,
-  width: 20,
-})`
+export const Console = styled.View`
   margin: 5px 0 5px 10px;
 `;
 
