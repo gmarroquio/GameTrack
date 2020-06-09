@@ -66,7 +66,7 @@ Make sure that expo-cli is installed
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/gmarroquio/NLW-1.0-ecoleta
+$ git clone https://github.com/gmarroquio/gametrack
 
 # Go into the repository
 $ cd GameTrack
@@ -74,7 +74,7 @@ $ cd GameTrack
 # Install dependencies
 $ yarn install
 
-# Run web server
+# Run expo
 $ yarn start
 
 ```
