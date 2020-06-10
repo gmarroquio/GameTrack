@@ -1,11 +1,11 @@
-<h1 align="center">Game Track</h1>
+<h1 align="center">Game Track :video_game:</h1>
 
 <!-- <h2 align="center">
-  <img alt="Ecoleta" src=".github/logo.svg" title="Ecoleta Logo"/>
+  <img alt="GameTrack" src=".github/logo.svg" title="Game Track Logo"/>
 </h2> -->
 
 <h4 align="center"> 
-	Game Track 🚀 🚧 Work in progress... 🚧
+	:hammer_and_wrench: Game Track :video_game: Work in progress... :hammer_and_wrench:
 </h4>
 <p align="center">
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/gmarroquio/gametrack?color=%23FF91AD">
@@ -34,7 +34,7 @@
   <a href="#memo-license">License</a>
 </p>
 
-## 💻 Project
+## :computer: Project
 
 Game Track is a mobile project developed based on site [RAWG](https://rawg.io/).
 
@@ -42,21 +42,22 @@ Game Track is a mobile project developed based on site [RAWG](https://rawg.io/).
     <img alt="Example" title="Example" src=".github/home.svg" width="250px" />
 </h1>
 
-## 🚀 Technologies
+## :man_technologist: Technologies
 
 This project is using the following technologies:
 
 - [TypeScript][typescript]
 - [React Native][rn]
 - [Expo][expo]
+  󠀠
 
-## 🔖 Layout
+## :bookmark: Layout
 
 To access the layout use [Figma](https://www.figma.com/file/wqoeDYsv8gElpKdCDR26jf/).
 
-## ℹ️ How To Use
+## :information_source: How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js][nodejs] + [Yarn][yarn] and [Expo][expo] installed on your computer.
+To clone and run this application, you'll need [Git](https://git-scm.com), [Yarn][yarn] and [Expo][expo] installed on your computer.
 
 From your command line:
 
@@ -79,7 +80,7 @@ $ yarn start
 
 ```
 
-## 🤔 How to contribute
+## :thinking: How to contribute
 
 - Make a fork;
 - Create a branch with your feature: `git checkout -b my-feature`;
@@ -88,11 +89,11 @@ $ yarn start
 
 After merging your receipt request to done, you can delete a branch from yours.
 
-## 📝 License
+## :memo: License
 
 This project is under the MIT license. See the [LICENSE](https://github.com/gmarroquio/gametrack/blob/master/LICENSE) for details.
 
-Made by Guilherme Marroquio 👋 [Get in touch!](https://www.linkedin.com/in/gmarroquio/)
+Made by Guilherme Marroquio :wave: [Get in touch!](https://www.linkedin.com/in/gmarroquio/)
 
 [nodejs]: https://nodejs.org/
 [typescript]: https://www.typescriptlang.org/
