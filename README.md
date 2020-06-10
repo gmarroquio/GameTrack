@@ -8,20 +8,20 @@
 	Game Track 🚀 🚧 Work in progress... 🚧
 </h4>
 <p align="center">
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/gmarroquio/GameTrack?color=%23FF91AD">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/gmarroquio/gametrack?color=%23FF91AD">
 	
   <a href="https://www.linkedin.com/in/gmarroquio/">
     <img alt="Made by Guilherme" src="https://img.shields.io/badge/made%20by-Guilherme-%232990B3">
   </a>
 
   <a href="https://github.com/Guilherme/NLW-1.0/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/gmarroquio/GameTrack?color=%23FF91AD">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/gmarroquio/gametrack?color=%23FF91AD">
   </a>
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT?color=%232990B3">
 
-  <a href="https://github.com/gmarroquio/GameTrack/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/gmarroquio/GameTrack?color=%23FF91AD">
+  <a href="https://github.com/gmarroquio/gametrack/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/gmarroquio/gametrack?color=%23FF91AD">
   </a>
 </p>
 
@@ -66,7 +66,7 @@ Make sure that expo-cli is installed
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/gmarroquio/NLW-1.0-ecoleta
+$ git clone https://github.com/gmarroquio/gametrack
 
 # Go into the repository
 $ cd GameTrack
@@ -74,7 +74,7 @@ $ cd GameTrack
 # Install dependencies
 $ yarn install
 
-# Run web server
+# Run expo
 $ yarn start
 
 ```
