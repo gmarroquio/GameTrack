@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FlatList, TouchableOpacity } from "react-native-gesture-handler";
 import { FontAwesome } from "@expo/vector-icons";
-import Icon from "../../components/Icon";
+import Icons from "../../components/Icon";
 
 import api from "../../services/api";
 
@@ -37,10 +37,11 @@ interface Platform {
 }
 
 const Home: React.FC = () => {
-  const [games, setGames] = useState<Game[]>();
+  const [games, setGames] = useState<Game[]>([]);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
-    api.get("games?page_size=20").then((response) => {
+    api.get(`games?page=${page}&page_size=20`).then((response) => {
       const data = response.data.results.map((game: Game) => ({
         id: game.id,
         name: game.name,
@@ -49,9 +50,9 @@ const Home: React.FC = () => {
         released: game.released,
         background_image: game.background_image,
       }));
-      setGames(data);
+      setGames([...games, ...data]);
     });
-  }, []);
+  }, [page]);
 
   const renderGames = ({ item }: { item: Game }) => (
     <TouchableOpacity>
@@ -78,11 +79,7 @@ const Home: React.FC = () => {
           </WrapperTop>
           <WrapperBottom>
             <Consoles>
-              {item.parent_platforms.map(({ platform }) => (
-                <Console key={String(platform.id)}>
-                  <Icon name={platform.slug} size={20} />
-                </Console>
-              ))}
+              <Icons platforms={item.parent_platforms} size={20} />
             </Consoles>
             <ReleaseDate>{item.released}</ReleaseDate>
           </WrapperBottom>
@@ -98,6 +95,8 @@ const Home: React.FC = () => {
         keyExtractor={(item) => String(item.id)}
         renderItem={renderGames}
         showsVerticalScrollIndicator={false}
+        onEndReachedThreshold={0.5}
+        onEndReached={() => setPage(page + 1)}
       />
     </Container>
   );

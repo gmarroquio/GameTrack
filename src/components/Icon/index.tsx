@@ -17,11 +17,19 @@ import neo_geo from "../../assets/neo-geo.svg";
 import web from "../../assets/web.svg";
 
 interface Icon {
-  name: string;
+  platforms: Platform[];
   size: number;
 }
 
-const Icon: React.FC<Icon> = ({ name, size }) => {
+interface Platform {
+  platform: {
+    id: number;
+    name: string;
+    slug: string;
+  };
+}
+
+const Icon: React.FC<Icon> = ({ platforms, size }) => {
   const logo = {
     pc,
     playstation,
@@ -39,7 +47,15 @@ const Icon: React.FC<Icon> = ({ name, size }) => {
     web,
   };
 
-  return <SvgXml xml={logo[name]} height={size} width={size} />;
+  return platforms.map(({ platform }) => (
+    <SvgXml
+      style={{ marginBottom: 10, marginRight: 5 }}
+      key={String(platform.id)}
+      xml={logo[platform.slug]}
+      height={size}
+      width={size}
+    />
+  ));
 };
 
 export default Icon;

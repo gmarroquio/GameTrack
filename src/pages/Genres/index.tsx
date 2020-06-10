@@ -1,11 +1,18 @@
 import React from "react";
 
 import { Container } from "./styles";
-import Icon from "../../components/Icon";
+import Icons from "../../components/Icon";
 
 const Genres: React.FC = () => (
   <Container>
-    <Icon name="linux" size={50} />
+    <Icons
+      platforms={[
+        { platform: { id: 2, name: "linux", slug: "pc" } },
+        { platform: { id: 3, name: "linux", slug: "linux" } },
+        { platform: { id: 4, name: "linux", slug: "playstation" } },
+      ]}
+      size={50}
+    />
   </Container>
 );
 
