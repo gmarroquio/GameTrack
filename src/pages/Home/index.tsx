@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { FlatList, TouchableOpacity } from "react-native-gesture-handler";
-import { FontAwesome } from "@expo/vector-icons";
-import Icons from "../../components/Icon";
+import { useNavigation } from "@react-navigation/native";
 
 import api from "../../services/api";
 
+import Icons from "../../components/Icon";
 import {
   Container,
   GameContainer,
   Info,
   Title,
-  Rating,
   Consoles,
-  Console,
   ReleaseDate,
   WrapperTop,
   WrapperBottom,
   Gradient,
+  Rating,
+  RatingText,
 } from "./styles";
 
 interface Game {
@@ -39,23 +39,30 @@ interface Platform {
 const Home: React.FC = () => {
   const [games, setGames] = useState<Game[]>([]);
   const [page, setPage] = useState(1);
+  const navigation = useNavigation();
 
   useEffect(() => {
-    api.get(`games?page=${page}&page_size=20`).then((response) => {
-      const data = response.data.results.map((game: Game) => ({
-        id: game.id,
-        name: game.name,
-        rating: game.rating,
-        parent_platforms: game.parent_platforms,
-        released: game.released,
-        background_image: game.background_image,
-      }));
-      setGames([...games, ...data]);
-    });
+    api
+      .get(
+        `games/lists/main?discover=true&ordering=-relevance&page=${page}&page_size=20`
+      )
+      .then((response) => {
+        const data = response.data.results.map((game: Game) => ({
+          id: game.id,
+          name: game.name,
+          rating: game.rating,
+          parent_platforms: game.parent_platforms,
+          released: game.released,
+          background_image: game.background_image,
+        }));
+        setGames([...games, ...data]);
+      });
   }, [page]);
 
   const renderGames = ({ item }: { item: Game }) => (
-    <TouchableOpacity>
+    <TouchableOpacity
+      onPress={() => navigation.navigate("Game", { game_id: item.id })}
+    >
       <GameContainer
         source={{
           uri: item.background_image,
@@ -69,12 +76,10 @@ const Home: React.FC = () => {
         <Info>
           <WrapperTop>
             <Title>{item.name}</Title>
-            <Rating>
-              <FontAwesome name="star" size={16} color="yellow" />
-              <FontAwesome name="star" size={16} color="yellow" />
-              <FontAwesome name="star" size={16} color="yellow" />
-              <FontAwesome name="star-half-empty" size={16} color="yellow" />
-              <FontAwesome name="star-o" size={16} color="yellow" />
+            <Rating rating={item.rating}>
+              <RatingText rating={item.rating}>
+                {item.rating.toFixed(2)}
+              </RatingText>
             </Rating>
           </WrapperTop>
           <WrapperBottom>
@@ -97,6 +102,7 @@ const Home: React.FC = () => {
         showsVerticalScrollIndicator={false}
         onEndReachedThreshold={0.5}
         onEndReached={() => setPage(page + 1)}
+        extraData={games}
       />
     </Container>
   );

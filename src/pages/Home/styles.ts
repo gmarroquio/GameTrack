@@ -38,11 +38,6 @@ export const Title = styled.Text`
   font-weight: bold;
 `;
 
-export const Rating = styled.View`
-  flex-direction: row;
-  margin-top: 5px;
-`;
-
 export const Consoles = styled.View`
   flex-direction: row;
 `;
@@ -63,4 +58,35 @@ export const Gradient = styled(LinearGradient)`
   right: 0;
   top: 0;
   height: 100%;
+`;
+
+interface Rating {
+  rating: number;
+}
+
+export const Rating = styled.View<Rating>`
+  margin: 5px;
+  padding: 5px;
+  border: 2px solid
+    ${({ rating }) =>
+      rating && rating > 4
+        ? "green"
+        : rating > 3
+        ? "yellow"
+        : rating > 2
+        ? "orange"
+        : "red"};
+  border-radius: 4px;
+`;
+
+export const RatingText = styled.Text<Rating>`
+  font-weight: bold;
+  color: ${({ rating }) =>
+    rating && rating > 4
+      ? "green"
+      : rating > 3
+      ? "yellow"
+      : rating > 2
+      ? "orange"
+      : "red"};
 `;

@@ -1,13 +1,12 @@
 import React from "react";
 import "react-native-gesture-handler";
-import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
 
-const Tab = createMaterialTopTabNavigator();
+const Stack = createStackNavigator();
 
 import Home from "./pages/Home";
-import Genres from "./pages/Genres";
-import Trending from "./pages/Trending";
+import Game from "./pages/Game";
 import Header from "./components/Header";
 
 const Routes: React.FC = () => {
@@ -15,19 +14,10 @@ const Routes: React.FC = () => {
     <>
       <NavigationContainer>
         <Header />
-        <Tab.Navigator
-          initialRouteName="Home"
-          sceneContainerStyle={{ backgroundColor: "#333" }}
-          tabBarOptions={{
-            indicatorStyle: { backgroundColor: "white" },
-            activeTintColor: "#fff",
-            style: { backgroundColor: "#17182e" },
-          }}
-        >
-          <Tab.Screen name="Genres" component={Genres} />
-          <Tab.Screen name="Home" component={Home} />
-          <Tab.Screen name="Trending" component={Trending} />
-        </Tab.Navigator>
+        <Stack.Navigator headerMode="none">
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Game" component={Game} />
+        </Stack.Navigator>
       </NavigationContainer>
     </>
   );

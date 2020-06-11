@@ -1,11 +1,11 @@
-<h1 align="center">Game Track :video_game:</h1>
+<h1 align="center">Game Track 🎮</h1>
 
 <!-- <h2 align="center">
   <img alt="GameTrack" src=".github/logo.svg" title="Game Track Logo"/>
 </h2> -->
 
 <h4 align="center"> 
-	:hammer_and_wrench: Game Track :video_game: Work in progress... :hammer_and_wrench:
+	🛠 Game Track 🎮 Work in progress... 🛠
 </h4>
 <p align="center">
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/gmarroquio/gametrack?color=%23FF91AD">
@@ -34,15 +34,16 @@
   <a href="#memo-license">License</a>
 </p>
 
-## :computer: Project
+## 💻 Project
 
 Game Track is a mobile project developed based on site [RAWG](https://rawg.io/).
 
 <h1 align="center">
-    <img alt="Example" title="Example" src=".github/home.svg" width="250px" />
+    <img alt="Example" title="Example" src=".github/Home - v2@3x.png" width="300px" />
+    <img alt="Example" title="Example" src=".github/Game Screen@3x.png" width="300px" />
 </h1>
 
-## :man_technologist: Technologies
+## 👨‍💻 Technologies
 
 This project is using the following technologies:
 
@@ -51,11 +52,11 @@ This project is using the following technologies:
 - [Expo][expo]
   󠀠
 
-## :bookmark: Layout
+## 🔖 Layout
 
 To access the layout use [Figma](https://www.figma.com/file/wqoeDYsv8gElpKdCDR26jf/).
 
-## :information_source: How To Use
+## ℹ️ How To Use
 
 To clone and run this application, you'll need [Git](https://git-scm.com), [Yarn][yarn] and [Expo][expo] installed on your computer.
 
@@ -80,7 +81,7 @@ $ yarn start
 
 ```
 
-## :thinking: How to contribute
+## 🤔 How to contribute
 
 - Make a fork;
 - Create a branch with your feature: `git checkout -b my-feature`;
@@ -89,11 +90,11 @@ $ yarn start
 
 After merging your receipt request to done, you can delete a branch from yours.
 
-## :memo: License
+## 📝 License
 
 This project is under the MIT license. See the [LICENSE](https://github.com/gmarroquio/gametrack/blob/master/LICENSE) for details.
 
-Made by Guilherme Marroquio :wave: [Get in touch!](https://www.linkedin.com/in/gmarroquio/)
+Made by Guilherme Marroquio 👋 [Get in touch!](https://www.linkedin.com/in/gmarroquio/)
 
 [nodejs]: https://nodejs.org/
 [typescript]: https://www.typescriptlang.org/
