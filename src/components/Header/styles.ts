@@ -1,33 +1,22 @@
 import styled from "styled-components/native";
+import Constants from "expo-constants";
+import colors from "../../styles/colors";
 
 export const Container = styled.View`
-  background: #17182e;
-  height: 100px;
-  flex-direction: row;
-  align-items: center;
-  padding: 5px;
-  justify-content: space-between;
-`;
-
-export const Menu = styled.TouchableOpacity`
-  margin: 10px;
-`;
-
-export const Title = styled.Text`
-  font-size: 30px;
-  color: #fff;
-  margin: 15px;
+  padding: 0 24px;
+  padding-top: ${Constants.statusBarHeight + 20}px;
+  padding-bottom: 20px;
+  background: ${colors.primary};
 `;
 
 export const Wrapper = styled.View`
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
 `;
 
-export const Filter = styled.TouchableOpacity`
-  margin: 15px;
-`;
-export const Search = styled.TouchableOpacity`
-  margin: 15px;
+export const Title = styled.Text`
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
 `;

@@ -2,12 +2,12 @@ import React from "react";
 import "react-native-gesture-handler";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
+import Header from "./components/Header";
 
 const Stack = createStackNavigator();
 
 import Home from "./pages/Home";
 import Game from "./pages/Game";
-import Header from "./components/Header";
 
 const Routes: React.FC = () => {
   return (

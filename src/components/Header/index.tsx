@@ -1,17 +1,18 @@
 import React from "react";
-import { Feather } from "@expo/vector-icons";
-import { Container, Title, Filter, Search } from "./styles";
+import { TouchableOpacity } from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
+
+import { Container, Wrapper, Title } from "./styles";
 
 const Header: React.FC = () => {
   return (
     <Container>
-      <Filter>
-        <Feather name="filter" size={24} color="white" />
-      </Filter>
-      <Title>Game Track</Title>
-      <Search>
-        <Feather name="search" size={24} color="white" />
-      </Search>
+      <Wrapper>
+        <Title>Feed</Title>
+        <TouchableOpacity>
+          <FontAwesome name="search" size={24} color="#fff" />
+        </TouchableOpacity>
+      </Wrapper>
     </Container>
   );
 };

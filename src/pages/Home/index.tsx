@@ -18,6 +18,7 @@ import {
   Rating,
   RatingText,
 } from "./styles";
+import colors from "../../styles/colors";
 
 interface Game {
   id: number;
@@ -69,13 +70,13 @@ const Home: React.FC = () => {
         }}
       >
         <Gradient
-          colors={["#17182e", "transparent"]}
+          colors={[colors.primary, "transparent"]}
           start={[1, 1]}
           end={[0, 0]}
         />
         <Info>
           <WrapperTop>
-            <Title>{item.name}</Title>
+            <Title numberOfLines={1}>{item.name}</Title>
             <Rating rating={item.rating}>
               <RatingText rating={item.rating}>
                 {item.rating.toFixed(2)}
@@ -84,7 +85,7 @@ const Home: React.FC = () => {
           </WrapperTop>
           <WrapperBottom>
             <Consoles>
-              <Icons platforms={item.parent_platforms} size={20} />
+              <Icons platforms={item.parent_platforms} size={24} />
             </Consoles>
             <ReleaseDate>{item.released}</ReleaseDate>
           </WrapperBottom>

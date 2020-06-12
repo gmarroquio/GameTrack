@@ -1,16 +1,19 @@
 import styled from "styled-components/native";
 import { LinearGradient } from "expo-linear-gradient";
+import colors from "../../styles/colors";
 
 export const Container = styled.View`
   background: #333;
   flex: 1;
+  margin: 0;
+  padding: 0 16px;
 `;
 
 export const GameContainer = styled.ImageBackground`
-  margin: 5px;
-  border: 5px solid #17182e;
+  margin: 10px auto 0;
+  border: 5px solid ${colors.primary};
   border-radius: 8px;
-  width: 98%;
+  width: 100%;
   height: 200px;
   align-items: flex-end;
 `;
@@ -48,7 +51,7 @@ export const Console = styled.View`
 
 export const ReleaseDate = styled.Text`
   color: #fff;
-  font-weight: bold;
+  font-size: 16px;
   margin: 5px 0;
 `;
 
@@ -66,8 +69,8 @@ interface Rating {
 
 export const Rating = styled.View<Rating>`
   margin: 5px;
-  padding: 5px;
-  border: 2px solid
+  padding: 5px 10px;
+  border: 3px solid
     ${({ rating }) =>
       rating && rating > 4
         ? "green"
@@ -76,11 +79,12 @@ export const Rating = styled.View<Rating>`
         : rating > 2
         ? "orange"
         : "red"};
-  border-radius: 4px;
+  border-radius: 8px;
 `;
 
 export const RatingText = styled.Text<Rating>`
   font-weight: bold;
+  font-size: 16px;
   color: ${({ rating }) =>
     rating && rating > 4
       ? "green"
