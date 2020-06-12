@@ -34,7 +34,7 @@
   <a href="#memo-license">License</a>
 </p>
 
-## 💻 Project
+## :computer: Project
 
 Game Track is a mobile project developed based on site [RAWG](https://rawg.io/).
 
