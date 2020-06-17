@@ -5,7 +5,7 @@
 </h2> -->
 
 <h4 align="center"> 
-	🛠 Game Track 🎮 Work in progress... 🛠
+	Game Track 🎮
 </h4>
 <p align="center">
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/gmarroquio/gametrack?color=%23FF91AD">
@@ -40,7 +40,6 @@ Game Track is a mobile project developed based on site [RAWG](https://rawg.io/).
 
 <h1 align="center">
     <img alt="Example" title="Example" src=".github/Home - v2@3x.png" width="300px" />
-    <img alt="Example" title="Example" src=".github/Game Screen@3x.png" width="300px" />
 </h1>
 
 ## 👨‍💻 Technologies
@@ -85,7 +84,7 @@ $ yarn start
 
 - Make a fork;
 - Create a branch with your feature: `git checkout -b my-feature`;
-- Commit changes: `git commit -m 'feat: My new feature'`;
+- Commit changes: `git commit -m '[feat]: My new feature'`;
 - Make a push to your branch: `git push origin my-feature`.
 
 After merging your receipt request to done, you can delete your branch.

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "rawgMobile",
-    "slug": "rawgMobile",
+    "name": "Game Track",
+    "slug": "game-track",
     "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#333"
+      "backgroundColor": "#002255"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -17,6 +17,9 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.gmarroquio.gametrack"
     }
   }
 }

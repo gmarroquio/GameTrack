@@ -1,4 +1,5 @@
 import React from "react";
+import { Text } from "react-native";
 import { SvgXml } from "react-native-svg";
 
 import pc from "../../assets/pc.svg";
@@ -47,15 +48,19 @@ const Icon: React.FC<Icon> = ({ platforms, size }) => {
     web,
   };
 
-  return platforms.map(({ platform }) => (
-    <SvgXml
-      style={{ marginBottom: 10, marginRight: 5 }}
-      key={String(platform.id)}
-      xml={logo[platform.slug]}
-      height={size}
-      width={size}
-    />
-  ));
+  if (platforms)
+    return platforms.map(({ platform }) => (
+      <SvgXml
+        style={{ marginBottom: 10, marginRight: 5 }}
+        key={String(platform.id)}
+        xml={logo[platform.slug]}
+        height={size}
+        width={size}
+      />
+    ));
+  else {
+    return <Text>UNKNOWN</Text>;
+  }
 };
 
 export default Icon;
