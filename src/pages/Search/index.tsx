@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { FlatList, TouchableOpacity } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 
-import Header from "../../components/Header";
-
 import api from "../../services/api";
 
 import Icons from "../../components/Icon";
@@ -19,6 +17,7 @@ import {
   Gradient,
   Rating,
   RatingText,
+  TextInput,
 } from "./styles";
 import colors from "../../styles/colors";
 
@@ -44,11 +43,13 @@ const Home: React.FC = () => {
   const [games, setGames] = useState<Game[]>([]);
   const [page, setPage] = useState(1);
   const navigation = useNavigation();
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     api
       .get("games", {
         params: {
+          search,
           ordering: "-rating",
           page,
           page_size: 10,
@@ -66,6 +67,33 @@ const Home: React.FC = () => {
         setGames([...games, ...data]);
       });
   }, [page]);
+
+  useEffect(() => {
+    api
+      .get("games", {
+        params: {
+          search,
+          ordering: "-rating",
+          page,
+          page_size: 10,
+        },
+      })
+      .then((response) => {
+        const data = response.data.results.map((game: Game) => ({
+          id: game.id,
+          name: game.name,
+          rating: game.rating,
+          parent_platforms: game.parent_platforms,
+          released: game.released,
+          background_image: game.background_image,
+        }));
+        setGames([...data]);
+      });
+  }, [search]);
+
+  const handleSearch = (e: string) => {
+    setSearch(e);
+  };
 
   const renderGames = ({ item }: { item: Game }) => (
     <TouchableOpacity
@@ -103,8 +131,8 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <Header />
       <Container>
+        <TextInput onChangeText={handleSearch} />
         <FlatList
           data={games}
           keyExtractor={(item) => String(item.id)}

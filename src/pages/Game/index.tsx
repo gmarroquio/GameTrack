@@ -73,11 +73,11 @@ const Game: React.FC = () => {
   if (loading) return <View style={{ backgroundColor: "#333", flex: 1 }} />;
   return (
     <Container>
+      <Title>{game.name}</Title>
       <ImageBorder>
         <Image source={{ uri: game.background_image }} />
       </ImageBorder>
       <Info>
-        <Title>{game.name}</Title>
         <View
           style={{
             flexDirection: "row",
@@ -87,7 +87,7 @@ const Game: React.FC = () => {
           }}
         >
           <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Release>{game.released}</Release>
+            <Release>{game.released || "unknown"}</Release>
             <Consoles>
               <Icon platforms={game.parent_platforms} size={20} />
             </Consoles>

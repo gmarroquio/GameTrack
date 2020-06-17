@@ -1,10 +1,13 @@
 import styled from "styled-components/native";
 import colors from "../../styles/colors";
+import Constants from "expo-constants";
 
 export const Container = styled.ScrollView`
   flex: 1;
   background: #333;
-  padding: 8px;
+  padding: 0 16px;
+  padding-top: ${Constants.statusBarHeight + 20}px;
+  padding-bottom: 20px;
 `;
 
 export const Image = styled.Image`
@@ -25,6 +28,8 @@ export const Title = styled.Text`
   color: #fff;
   font-size: 32px;
   font-weight: bold;
+  align-self: center;
+  padding-bottom: 9px;
 `;
 
 export const Release = styled.Text`
