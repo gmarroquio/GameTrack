@@ -6,13 +6,12 @@ import Constants from "expo-constants";
 export const Container = styled.View`
   flex: 1;
   background: #333;
-  padding: 0 16px;
-  padding-top: ${Constants.statusBarHeight + 20}px;
+  padding: 8px;
   margin: 0;
 `;
 
 export const GameContainer = styled.ImageBackground`
-  margin: 10px auto 0;
+  margin-top: 10px;
   border: 5px solid ${colors.primary};
   border-radius: 8px;
   width: 100%;
@@ -74,13 +73,13 @@ export const Rating = styled.View<Rating>`
   padding: 5px 10px;
   border: 3px solid
     ${({ rating }) =>
-      rating && rating > 4
-        ? "green"
-        : rating > 3
+    rating && rating > 4
+      ? "green"
+      : rating > 3
         ? "yellow"
         : rating > 2
-        ? "orange"
-        : "red"};
+          ? "orange"
+          : "red"};
   border-radius: 8px;
 `;
 
@@ -91,10 +90,10 @@ export const RatingText = styled.Text<Rating>`
     rating && rating > 4
       ? "green"
       : rating > 3
-      ? "yellow"
-      : rating > 2
-      ? "orange"
-      : "red"};
+        ? "yellow"
+        : rating > 2
+          ? "orange"
+          : "red"};
 `;
 
 export const TextInput = styled.TextInput`

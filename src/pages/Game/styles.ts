@@ -6,8 +6,7 @@ export const Container = styled.ScrollView`
   flex: 1;
   background: #333;
   padding: 0 16px;
-  padding-top: ${Constants.statusBarHeight + 20}px;
-  padding-bottom: 20px;
+  padding: 10px;
 `;
 
 export const Image = styled.Image`
@@ -55,13 +54,13 @@ export const Rating = styled.View<Rating>`
   padding: 5px 10px;
   border: 3px solid
     ${({ rating }) =>
-      rating && rating > 4
-        ? "green"
-        : rating > 3
+    rating && rating > 4
+      ? "green"
+      : rating > 3
         ? "yellow"
         : rating > 2
-        ? "orange"
-        : "red"};
+          ? "orange"
+          : "red"};
   border-radius: 8px;
 `;
 
@@ -72,22 +71,21 @@ export const RatingText = styled.Text<Rating>`
     rating && rating > 4
       ? "green"
       : rating > 3
-      ? "yellow"
-      : rating > 2
-      ? "orange"
-      : "red"};
+        ? "yellow"
+        : rating > 2
+          ? "orange"
+          : "red"};
 `;
 
 export const BuyTitle = styled.View`
-  background: ${colors.primary};
+  background: white;
   align-items: center;
   padding: 5px;
-  border: 3px solid white;
   border-radius: 8px;
 `;
 
 export const BuyTitleText = styled.Text`
-  color: #fff;
+  color: ${colors.primary};
   font-size: 28px;
   font-weight: bold;
 `;
@@ -101,7 +99,6 @@ export const BuyButton = styled.TouchableOpacity`
   background: ${colors.primary};
   align-items: center;
   padding: 5px;
-  border: 3px solid white;
   border-radius: 8px;
   justify-content: center;
 `;

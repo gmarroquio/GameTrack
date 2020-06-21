@@ -22,6 +22,8 @@ import {
 } from "./styles";
 import Icon from "../../components/Icon";
 
+import Header from "../../components/Header";
+
 interface Store {
   url: string;
   store: {
@@ -72,47 +74,50 @@ const Game: React.FC = () => {
 
   if (loading) return <View style={{ backgroundColor: "#333", flex: 1 }} />;
   return (
-    <Container>
-      <Title>{game.name}</Title>
-      <ImageBorder>
-        <Image source={{ uri: game.background_image }} />
-      </ImageBorder>
-      <Info>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginTop: 5,
-          }}
-        >
-          <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Release>{game.released || "unknown"}</Release>
-            <Consoles>
-              <Icon platforms={game.parent_platforms} size={20} />
-            </Consoles>
-          </View>
-          <Rating rating={game.rating}>
-            <RatingText rating={game.rating}>
-              {game.rating.toFixed(2)}
-            </RatingText>
-          </Rating>
-        </View>
-      </Info>
-      <BuyTitle>
-        <BuyTitleText>Where to buy</BuyTitleText>
-      </BuyTitle>
-      <Buy>
-        {game.stores.map((store) => (
-          <BuyButton
-            key={String(store.store.id)}
-            onPress={() => handleStore(store.url)}
+    <>
+      <Header />
+      <Container>
+        <Title>{game.name}</Title>
+        <ImageBorder>
+          <Image source={{ uri: game.background_image }} />
+        </ImageBorder>
+        <Info>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginTop: 5,
+            }}
           >
-            <BuyText>{store.store.name}</BuyText>
-          </BuyButton>
-        ))}
-      </Buy>
-    </Container>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Release>{game.released || "unknown"}</Release>
+              <Consoles>
+                <Icon platforms={game.parent_platforms} size={20} />
+              </Consoles>
+            </View>
+            <Rating rating={game.rating}>
+              <RatingText rating={game.rating}>
+                {game.rating.toFixed(2)}
+              </RatingText>
+            </Rating>
+          </View>
+        </Info>
+        <BuyTitle>
+          <BuyTitleText>Where to buy</BuyTitleText>
+        </BuyTitle>
+        <Buy>
+          {game.stores.map((store) => (
+            <BuyButton
+              key={String(store.store.id)}
+              onPress={() => handleStore(store.url)}
+            >
+              <BuyText>{store.store.name}</BuyText>
+            </BuyButton>
+          ))}
+        </Buy>
+      </Container>
+    </>
   );
 };
 

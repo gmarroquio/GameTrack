@@ -6,6 +6,8 @@ import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
 import api from "../../services/api";
 
+import Header from "../../components/Header";
+
 import Icons from "../../components/Icon";
 import {
   Container,
@@ -154,8 +156,9 @@ const Search: React.FC = () => {
 
   return (
     <>
+      <Header />
       <Container>
-        <TextInput onChangeText={handleSearch} />
+        <TextInput onChangeText={handleSearch} autoFocus />
         <FlatList
           data={games}
           keyExtractor={(item) => String(item.id)}
